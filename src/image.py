@@ -22,7 +22,8 @@ def canny(
         img = np.array(img)
 
     # to gray
-    img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    if img.ndim == 3:
+        img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
     # bg bias
     img = img.astype(float)
